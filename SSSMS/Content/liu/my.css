@@ -1,0 +1,72 @@
+﻿body {
+
+}
+.gv_table {
+    width: 900px;
+    margin: auto;
+    padding: 5px;
+    border: 2px solid #EEE;
+    border-bottom-color: #666;
+    border-right-color: #666;
+    text-align: center;
+}
+.my_table {
+    margin: auto;
+    padding: 5px;
+    border: 2px solid #EEE;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+}
+.survey_row
+{
+}
+.mytitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    border-radius: 8px;
+}
+.mydescription {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 200px;
+    border-radius: 8px;
+}
+.my_button {
+    background-color:#3a3f51;
+    border-radius:8px;
+    color:whitesmoke;
+}
+.mytb{
+    width:100px;
+}
+.left_add {
+    float: left;
+    width: 30%;
+    background-color: #ffffff;
+    border-radius:10px;
+    margin-top:20px;
+    text-align: center;
+    min-width:300px;
+}
+.right_list {
+    float: left;
+    width: 60%;
+    background-color: #ffffff;
+}
+.my_ddl{
+    width:40%;
+    border-radius:8px;
+    height:30px;
+    min-width:133px;
+}
+.my_saq{
+    width:80%;
+    border-radius:10px;
+}
+.my_input {
+    border-radius: 8px;
+}

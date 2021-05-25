@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="SSSMS.Menu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/vendors/iconfonts/puse-icons-feather/feather.css">
+    <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/vendors/css/vendor.bundle.addons.css">
+    <!-- endinject -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/Content/liu/style.css">
+    <link rel="stylesheet" href="/Content/liu/my.css">
+    <!--calendar-->
+    <link rel="stylesheet" type="text/css" href="/Content/liu/datedropper.css">
+    <link rel="stylesheet" type="text/css" href="/Content/liu/timedropper.min.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/Source/img/favicon.png" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="font-family: YouYuan">
+    <form id="form1" runat="server">
+        <div class="container-scroller">
+            <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row navbar-success">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                    <a class="navbar-brand brand-logo" href="#">
+                        <span style="text-shadow: 1px 1px 1px #000, -1px -1px 1px #fff; color: whitesmoke;">Center</span>
+
+                        <a class="navbar-brand brand-logo-mini" href="/home.aspx">
+                            <img src="/Source/img/nuaa.svg" alt="logo" style="width: 50px; height: 50px" /></a>
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+                    <ul class="navbar-nav">
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link">
+                                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-profile" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                                <asp:Image ID="imguser" runat="server"/>
+                                    <asp:Label ID="lbusername2" runat="server" class="d-none d-lg-inline"></asp:Label>
+                            </a>
+                            <div class="dropdown-menu navbar-dropdown w-100" aria-labelledby="profileDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="mdi mdi-cached mr-2 text-success"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/login.aspx">
+                                    <i class="mdi mdi-logout mr-2 text-primary"></i>
+                                    Signout
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item nav-settings d-none d-lg-block">
+                            <a class="nav-link" href="#">
+                                <i class="mdi mdi-backburger"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+            </nav>
+            <!-- partial -->
+            <!--右下角 旋转设置按钮 切换皮肤-->
+            <div class="container-fluid page-body-wrapper">
+                <!-- partial:../../partials/_settings-panel.html -->
+                <div class="theme-setting-wrapper">
+                    <div id="settings-trigger"><i class="mdi mdi-settings"></i></div>
+                    <div id="theme-settings" class="settings-panel">
+                        <i class="settings-close mdi mdi-close"></i>
+                        <p class="settings-heading">SIDEBAR SKINS</p>
+                        <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                            <div class="img-ss rounded-circle bg-light border mr-3"></div>
+                            Light
+                        </div>
+                        <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                            <div class="img-ss rounded-circle bg-dark border mr-3"></div>
+                            Dark
+                        </div>
+                        <p class="settings-heading mt-2">HEADER SKINS</p>
+                        <div class="color-tiles mx-0 px-4">
+                            <div class="tiles primary"></div>
+                            <div class="tiles success"></div>
+                            <div class="tiles warning"></div>
+                            <div class="tiles danger"></div>
+                            <div class="tiles pink"></div>
+                            <div class="tiles info"></div>
+                            <div class="tiles dark"></div>
+                            <div class="tiles default"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- partial -->
+                <!-- partial:../../partials/_sidebar.html -->
+                <!-- 侧边栏 -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav">
+                        <li class="nav-item nav-profile">
+                            <div class="nav-link d-flex">
+                                <div class="profile-image">
+                                    <asp:Image ID="imguser2" runat="server" />
+                                    <span class="online-status online"></span>
+                                    <!--change class online to offline or busy as needed-->
+                                </div>
+                                <div class="profile-name">
+                                    <asp:Label id="lbusername" runat="server" CssClass="name">
+                                    </asp:Label>
+                                    <br />
+                                    <asp:Label id="lbtype" runat="server" class="designation">
+                                    </asp:Label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item nav-category">
+                            <span class="nav-link">管理员</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
+                                <i class="icon-box menu-icon"></i>
+                                <span class="menu-title">调查问卷</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="page-layouts">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"><a class="nav-link" href="/Admin/Survey/index.aspx">管理</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/Admin/Survey/add.aspx">添加</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
+                                <i class="icon-globe menu-icon"></i>
+                                <span class="menu-title">Sidebar Layouts</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="sidebar-layouts">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Compact menu</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Icon menu</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Sidebar Hidden</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Sidebar Overlay</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Sidebar Fixed</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calendar.html">
+                                <i class="icon-paper menu-icon"></i>
+                                <span class="menu-title">Calendar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">
+                            <span class="nav-link">普通用户</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/User/answer/select.aspx">
+                                <i class="icon-paper menu-icon"></i>
+                                <span class="menu-title">选择问卷</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- partial -->
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+
+                    </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:../../partials/_footer.html -->
+                    <footer class="footer">
+                        <div class="container-fluid clearfix">
+                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a href="#" target="_blank">liuyadong</a>. All rights reserved.</span>
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+                        </div>
+                    </footer>
+                    <!-- partial -->
+                </div>
+                <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+    </form>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="/Scripts/liu/menu/off-canvas.js"></script>
+    <script src="/Scripts/liu/menu/hoverable-collapse.js"></script>
+    <script src="/Scripts/liu/menu/misc.js"></script>
+    <script src="/Scripts/liu/menu/settings.js"></script>
+    <script src="/Scripts/liu/menu/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="/Scripts/liu/menu/js/calendar.js"></script>
+    <!-- End custom js for this page-->
+
+</body>
+</html>
